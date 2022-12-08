@@ -1,0 +1,609 @@
+:root{
+    --clr-primary-400: hsl(211, 97%, 35%); /* Metalia - plava */
+    --clr-primary-800: hsl(209,94%,18%);
+    --clr-primary-900: rgb(3, 35, 65);
+
+    --clr-grey-100: rgb(235, 237, 243);
+    --clr-grey-400: rgb(189, 189, 189);
+    --clr-grey-900: rgb(108, 111, 118); /* Metalia - siva */
+    --clr-grey-950: rgb(63, 64, 69);
+
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-900: hsl(233, 12%, 13%);
+
+    --clr-accent-500: #FC5F2A;
+    --clr-accent-400: hsl(217, 100%, 44%);
+    --clr-accent-300: hsl(217, 100%, 70%);
+
+
+    --ff-primary: 'Be Vietnam Pro', sans-serif;
+    --ff-heading: var(--ff-primary);
+    --ff-body: var(--ff-primary);
+    
+    --fw-regular: 400; /* default */
+    --fw-semi-bold: 500;
+    --fw-bold: 700;
+
+    --fs-100: .8125rem;
+    --fs-200: .875rem; /* 14px = 14/16 rem */
+    --fs-300: 0.9375rem; /* 15px */
+    --fs-400: 1rem; /* 16px */
+    --fs-450: 1.25rem;
+    --fs-500: 1.875rem; /* 30px */
+    --fs-550: 2rem;
+    --fs-600: 2.5rem; /* 40px */
+    --fs-700: 3.5rem;
+    --fs-800: 4.5rem;
+    --fs-900: 5rem;
+
+    --fs-body: var(--fs-100);
+    --fs-secondary-heading: var(--fs-450);
+    --fs-primary-heading: var(--fs-500);
+    --fs-nav: var(--fs-400);
+    --fs-button: var(--fs-200);
+    --fs-subtext: 0.9375rem;
+
+    --size-100: .25rem;
+    --size-200: .5rem;
+    --size-300: .75rem;
+    --size-400: 1rem;
+    --size-500: 1.5rem;
+    --size-600: 2rem;
+    --size-700: 3rem;
+    --size-800: 4rem;
+    --size-900: 5rem;
+}
+
+@media (min-width: 768px){
+    :root{
+        --fs-body: var(--fs-400);
+        --fs-primary-heading: var(--fs-800);
+        --fs-nav: var(--fs-100);
+        --fs-secondary-heading: var(--fs-500);
+    }
+}
+@media (min-width: 950px){
+    :root{
+        --fs-body: var(--fs-400);
+        --fs-primary-heading: var(--fs-800);
+        --fs-nav: var(--fs-200);
+        --fs-secondary-heading: var(--fs-600);
+        --fs-subtext: var(--fs-450);
+    }
+}
+
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+  
+  /* Set core body defaults */
+html, 
+body {
+      height: 100%; /* ???? */
+}
+  
+body{
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Nekakvi osnovni style */
+
+body{
+    font-size: var(--fs-body);
+    font-family: var(--ff-body);
+    color: var(--clr-primary-800);
+}
+
+.button{
+    transition: .3s;
+    display: inline-flex;
+    cursor: pointer;
+    text-decoration: none;
+    border: 0;
+    border-radius: 5px; /* ili 100vmax; */
+    padding: 1em 2.25em;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-button);
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-accent-400);
+    box-shadow: 0 1.125em 1em -1em var(--clr-primary-900);
+}
+
+.button[data-type="inverted"]{
+  transition: .3s;
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-primary-400);
+}
+
+.button[data-type="inverted"]:hover,
+.button[data-type="inverted"]:focus-visible{
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+}
+
+.button:hover,
+.button:focus-visible{
+  background-color: var(--clr-accent-300);
+  transform: scale(1.1);
+}
+
+/* Navigation */
+.primary-header{
+  padding-top: var(--size-300); /*Ovo je bolje postaviti pading umjesto margin-top radi overlaya - pokusati prominiti! */
+}
+
+.nav-logo{
+  width: 80px;
+  height: auto;
+}
+
+.nav-wrapper{
+  background-color: white;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 .2em 0em rgb(0,0,0,.05);
+}
+
+.mobile-nav-toggle{
+  display: none;
+}
+
+.nav-list{
+  font-size: var(--fs-nav);
+  display: flex;
+  gap: var(--size-700);
+  font-weight: var(--fw-semi-bold);
+}
+
+.nav-list a{
+  position: relative;
+  text-decoration: none;
+  color: var(--clr-grey-900);
+  /*padding: 0px 5px; -> ovo napraviti ali treba dodati neki breakpoint da se makne logo inace se sve sjebe radi mista */
+}
+
+
+.active-link,
+.nav-list a:hover,
+.nav-list a:focus{
+  color: var(--clr-primary-800);
+  font-weight: var(--fw-bold);
+  /*text-decoration: underline;*/
+  transition: 0.3s;
+}
+
+.active-link:after{
+  width: 100%;
+}
+
+.nav-list li a:after{
+  content: "";
+  position: absolute;
+  background-color: var(--clr-primary-800);
+  height: 3px;
+  width: 0%; /* Prvo stavimo 100% dok ga gradimo pa kasnije na 0% a hover na 100% */
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+
+/* .active-link -> plava boja, podebljan, i podcrtan na nacin da se a:after width nekako odma postavi na 100% kao defualt */
+/* Dakle a:after koji ima i klasu active mora se postaviti s widthom 100% */
+
+.nav-list li a:hover:after{
+  width: 100%;
+}
+.nav-list li a:focus:after{
+  width: 100%;
+}
+
+/* Media overwritea iznad nje */
+
+@media(max-width: 870px){
+
+  .primary-navigation{
+    display: none;
+    position: absolute;
+    background-color: var(--clr-grey-100);
+    padding: var(--size-700);
+    inset: 75px 0 0;
+    z-index: 100;
+  }
+
+  .nav-list{
+    display: grid;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .mobile-nav-toggle{
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .bar1,.bar2,.bar3{
+    background-color: #333;
+    width: 30px;
+    height: 3px;
+    margin: 6px 0;
+    transition: 0.3s;
+  }
+
+  .change .bar1{
+    transform: translate(0, 9px) rotate(-45deg);
+  }
+  .change .bar2{
+    opacity: 0;
+  }
+  .change .bar3{
+    transform: translate(0, -9px) rotate(45deg);
+  }
+
+  .mobile-nav-toggle .icon-close{
+    display: none;
+  }
+
+  .primary-navigation[data-visible]{
+    display: block;
+  }
+  
+}
+/* Kraj navigacije */
+
+/* Glavni heading - POČETAK */
+
+.pecat{
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  right: 30%;
+}
+
+.metalko{
+  z-index: 2;
+  display:flex;
+  justify-content: center;
+  width: 300px;
+  height: auto;
+}
+
+@media (max-width: 768px){
+  .pecat{
+    display: none;
+  }
+  .uvodni-heading{
+    padding: 3em;
+    background-color: var(--clr-grey-100);
+    overflow: hidden;
+  }
+  .flow-margin-top{
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px){
+  .uvodni-heading{
+    padding: 2em;
+    /*background-color: var(--clr-grey-100);*/
+  }  
+}
+
+
+/* Izbornik sa slikama - flex-menu */
+.glavni-izbornik{
+  /*display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  background-color: var(--clr-grey-100);
+}
+
+@media (min-width: 768px){
+  .glavni-izbornik{
+    box-shadow: -1px 5px 8px 2px rgba(0, 0, 0, 0.095);
+  }
+}
+
+.izbornik-item {
+  box-sizing: border-box;
+  padding: 2px 5px;
+  width: calc(25% - 30px);
+  text-decoration: none;
+  color: var(--clr-primary-800);
+}
+
+.izbornik-item:hover{
+  box-shadow: 0 4px 20px 10px rgb(0 0 0 / 2%), 0 4px 20px 10px rgb(0 0 0 / 2%);
+}
+.item-picture img{
+  transition: transform .3s ease;
+}
+.izbornik-item:hover .item-picture img{
+  transform: scale(1.1);
+}
+  
+.item-desc{
+  text-align: center;
+}
+
+.item-desc p{
+  color:var(--clr-grey-950);
+}
+
+/* bootstrap: img-resoponsive ili img-fluid */
+.item-picture img{
+  width: 50%; /*Ovdje smanjim velicinu a unutar .item-picture centriram pomocu flexa i tako drzim unutar ovog div-a(kontejnera)*/
+  object-fit: contain;
+  max-height: 100%; /* ili postaviti jednaki height kao i max height od parenta */
+}
+
+.item-picture {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1200px){
+  .izbornik-item {
+    width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 768px){
+  .izbornik-item {
+    width: 100%;
+  }
+}
+
+/* Image Carousel - Početak */
+
+.carousel__track{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  height: 100%;
+  transition: transform 450ms ease-in;
+} /* ovo je cisto radi odstupanja */
+
+.carousel{
+  position: relative;
+  margin: 0 auto; 
+  height: 600px;
+  width: 60%;
+}
+
+.carousel__image{
+  width: 100%; /* Tako da prati height i width od .carousel ili carousel__slide???*/
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__track-container{
+  background: lightcoral;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel__slide{
+  position: absolute; /* Navodno se ovako Slideo-vi stackaju jedan na drugoga a ne jedan pored drugoga? */
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.carousel__button{
+  transition: 0.3s;
+  position: absolute;
+  top: 50%;
+  /*height: 200px;*/
+  transform: translateY(-50%);
+  /*Kad ukljicmo gornji height vidimo da nam button pozicionira 50% od topa ali ne od centra button nego od vrha pa ga onda translatiramo za 50% njegove velicine prema gore tako da dobijemo pravi centar*/
+  /* jer kao zelimo da nam se button gurne prema gore za pola SVOJE veličine i zato ga translatiramo za 50%; */
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.carousel__button--left{
+  left: 5px;
+}
+.carousel__button--right{
+  right: 5px;
+}
+
+.carousel__button img{
+  width: 25px;
+}
+
+.carousel__nav{
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.carousel__indicator{
+  border: 0;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin: 0 10px;
+  background: rgba(0,0,0,.3);
+  cursor: pointer;
+}
+
+.carousel__indicator.current-slide{
+  background: rgba(0,0,0,.75);
+}
+
+.is-hidden{display: none;}
+
+
+/* CTA - prije footera */
+.cta{
+  background: rgb(3,97,176);
+  background: linear-gradient(0deg, rgba(3,97,176,1) 0%, rgba(3,86,176,1) 49%, rgba(3,100,176,1) 95%);
+}
+
+@media (max-width: 768px){
+  .cta{
+    text-align: center;
+  }
+}
+
+/* Utility klase */
+
+.container{
+  --max-width: 1400px;
+  --padding: 1rem;
+
+  margin-inline: auto; /* da postavi left and right -> Logical Property */
+  width: min(var(--max-width), 100% - (2*var(--padding)));
+}
+
+.even-columns{
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px){
+  .even-columns{
+    grid-auto-flow: column; /* Prvo popunjavaj stupce pa potom retke */
+    grid-auto-columns: 1fr;
+  }
+}
+
+
+:where(.flow-margin-top :not(:first-child)){
+  margin-top: var(--flow-spacer, 2em);
+}
+
+.text-primary-800{
+  color: var(--clr-primary-800);
+}
+
+.text-neutral-100{
+  color: var(--clr-neutral-100);
+}
+
+.text-accent-500{
+  color: var(--clr-accent-500);
+}
+
+.bg-primary-400{
+  background-color: var(--clr-primary-400);
+}
+
+.bg-primary-800{
+  background-color: var(--clr-primary-800);
+}
+
+.bg-neutral-100{
+  background-color: var(--clr-neutral-100);
+}
+
+.bg-neutral-900{
+  background-color: var(--clr-neutral-900);
+}
+
+.fw-semi-bold{font-weight: var(--fw-semi-bold);}
+.fw-bold{font-weight: var(--fw-bold);}
+
+.fs-primary-heading{
+  line-height: 1;
+  font-size: var(--fs-primary-heading);
+}
+
+.fs-secondary-heading{
+  font-size: var(--fs-secondary-heading);
+}
+
+.fs-subtext{
+  font-size: var(--fs-subtext);
+}
+
+.padding-block-900{
+  padding-block: var(--size-900);
+}
+
+.padding-block-700{
+  padding-block: var(--size-700);
+}
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+.display-none{
+  display: none;
+}
+
+.vertical-align-center{
+  align-items: center;
+}
+
+@media(min-width: 1100px){
+  .display-md{
+    display: inline-flex;
+  }
+}
