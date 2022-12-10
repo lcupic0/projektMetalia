@@ -356,6 +356,44 @@ body{
   }  
 }
 
+/* Pomocni izbornik */
+
+.pomocni-container{
+  position: relative;
+  display: grid;
+}
+
+@media (min-width: 768px){
+  .pomocni-container{
+    grid-auto-flow: column; /* Prvo popunjavaj stupce pa potom retke */
+    grid-auto-columns: 1fr;
+  }
+}
+
+.pomocni-item:nth-child(even){
+  background-color: hsl(211, 98%, 33%); 
+}
+
+.pomocni-text{
+  font-size: .8rem;
+}
+
+.pomocne-slike{
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-primary-400);
+  padding: 10px 10px;
+}
+
+.pomocni-item{
+  text-decoration: none;
+  padding: 20px;
+  display: flex;
+  background-color: var(--clr-primary-400);
+}
+
 
 /* Izbornik sa slikama - flex-menu */
 .glavni-izbornik{
@@ -517,15 +555,11 @@ body{
 
 .is-hidden{display: none;}
 
-
 /* CTA - prije footera */
 .cta{
-  /*
-  background: rgb(3,97,176);
-  background: linear-gradient(0deg, rgba(3,97,176,1) 0%, rgba(3,86,176,1) 49%, rgba(3,100,176,1) 95%);
-  */
-  background-color: #2d68ee;
-  background-image: linear-gradient(60deg,#1259fe,#003098);
+  background-color: #2554c2;
+  background-image: linear-gradient(60deg,#0e42bb,#003098);
+  /*   background-color: hsl(211, 98%, 33%); */
 }
 
 @media (max-width: 768px){
@@ -614,6 +648,10 @@ body{
 
 .padding-block-700{
   padding-block: var(--size-700);
+}
+
+.padding-bottom-700{
+  padding-bottom: var(--size-700);
 }
 
 .lock-scroll {
