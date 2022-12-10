@@ -4,7 +4,16 @@ const menuIcons = document.querySelector(".item-picture");
 const menuItem = document.querySelector(".izbornik-item");
 
 navToggle.addEventListener('click', () => {
-    primaryNav.toggleAttribute("data-visible");
+    if(primaryNav.hasAttribute("data-visible")){
+        primaryNav.classList.add("scale-out-hor-right");
+        primaryNav.classList.remove("scale-in-hor-left");
+        primaryNav.toggleAttribute("data-visible");
+    }else{
+        primaryNav.toggleAttribute("data-visible");
+        primaryNav.classList.add("scale-in-hor-left");
+        primaryNav.classList.remove("scale-out-hor-right");
+    }
+    
     primaryNav.hasAttribute("data-visible") ? navToggle.setAttribute("aria-expanded", true) : navToggle.setAttribute("aria-expanded", false);
     document.body.classList.toggle("lock-scroll");
     navToggle.classList.toggle("change");
