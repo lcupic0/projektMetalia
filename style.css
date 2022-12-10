@@ -568,6 +568,47 @@ body{
   }
 }
 
+/* FOOTER */
+
+.main-footer{
+  background-color: rgb(40, 40, 40);
+  color: var(--clr-neutral-100);
+  padding: 50px;
+}
+
+.footer-logo{
+  width: 80px;
+  height: auto;
+}
+
+.main-footer h3{
+  font-size: 1.1rem;
+  color:#bfbfbf;
+}
+
+.main-footer p{
+  font-size: var(--fs-200);
+  line-height: 1.7;
+}
+
+.copyright{
+  font-size: .8rem !important;
+  color: var(--clr-grey-400);
+}
+
+.main-footer .fa-facebook-f, .main-footer .fa-instagram{
+  
+  margin: 10px 10px 0px 0px;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(62, 62, 62);
+  padding: 10px 10px;
+}
+
+.main-footer>.even-columns>div>a{
+  color: var(--clr-neutral-100);
+}
+
 /* Utility klase */
 
 .container{
@@ -650,8 +691,16 @@ body{
   padding-block: var(--size-700);
 }
 
+.padding-block-500{
+  padding-block: var(--size-500);
+}
+
 .padding-bottom-700{
   padding-bottom: var(--size-700);
+}
+
+.margin-bottom-1rem{
+  margin-bottom: .8rem;
 }
 
 .lock-scroll {
