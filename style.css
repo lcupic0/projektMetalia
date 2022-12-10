@@ -406,7 +406,11 @@ body{
 
 @media (max-width: 768px){
   .izbornik-item {
-    width: 100%;
+    width: calc(50% - 15px);
+  }
+
+  .glavni-izbornik{
+    gap: 15px;
   }
 }
 
