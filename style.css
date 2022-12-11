@@ -392,8 +392,16 @@ body{
   padding: 20px;
   display: flex;
   background-color: var(--clr-primary-400);
+  
 }
 
+.pomocni-item:hover .fa-arrow-right-long{
+  transform: scale(1.5);
+}
+
+.fa-arrow-right-long{
+  transition: transform .2s ease;
+}
 
 /* Izbornik sa slikama - flex-menu */
 .glavni-izbornik{
@@ -607,6 +615,10 @@ body{
 
 .main-footer>.even-columns>div>a{
   color: var(--clr-neutral-100);
+}
+
+@media (max-width: 768px){
+
 }
 
 /* Utility klase */
