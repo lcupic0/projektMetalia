@@ -164,7 +164,7 @@ body{
 }
 
 .button[data-type="inverted"]{
-  transition: .2s;
+  transition: .3s;
   background-color: transparent;
   border: 2px solid #fff;
   font-weight: bold;
@@ -643,6 +643,20 @@ body{
   .even-columns{
     grid-auto-flow: column; /* Prvo popunjavaj stupce pa potom retke */
     grid-auto-columns: 1fr;
+  }
+}
+
+@media(max-width: 768px){
+  body > main > footer > .even-columns{
+    justify-items:start;
+  }
+  body > main > footer > div > div:nth-child(2) > div{
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  .potpis-footer{
+    display: none;
   }
 }
 
