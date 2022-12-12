@@ -186,9 +186,14 @@ body{
 /* Navigation */
 .primary-header{
   padding-top: var(--size-300); /*Ovo je bolje postaviti pading umjesto margin-top radi overlaya - pokusati prominiti! */
-  position: sticky;
-  top: 0;
-  z-index: 101;
+}
+
+@media(min-width: 768px){
+  .primary-header{
+    position: sticky;
+    top: 0;
+    z-index: 101;
+  }
 }
 
 .nav-logo{
