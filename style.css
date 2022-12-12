@@ -186,6 +186,9 @@ body{
 /* Navigation */
 .primary-header{
   padding-top: var(--size-300); /*Ovo je bolje postaviti pading umjesto margin-top radi overlaya - pokusati prominiti! */
+  position: sticky;
+  top: 0;
+  z-index: 101;
 }
 
 .nav-logo{
@@ -493,7 +496,7 @@ body{
   position: relative;
   margin: 0 auto; 
   height: 600px;
-  width: 60%;
+  width: 100%;
 }
 
 .carousel__image{
