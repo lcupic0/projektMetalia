@@ -420,25 +420,27 @@ body{
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
-  background-color: var(--clr-grey-100);
 }
 
 @media (min-width: 768px){
   .glavni-izbornik{
-    box-shadow: -1px 5px 8px 2px rgba(0, 0, 0, 0.095);
+    
   }
+
 }
 
 .izbornik-item {
+  margin-top: 20px;
   box-sizing: border-box;
-  padding: 2px 5px;
   width: calc(25% - 30px);
   text-decoration: none;
   color: var(--clr-primary-800);
+  box-shadow: -1px 5px 8px 2px rgba(0, 0, 0, 0.073);
 }
 
 .izbornik-item:hover{
   box-shadow: 0 4px 20px 10px rgb(0 0 0 / 2%), 0 4px 20px 10px rgb(0 0 0 / 2%);
+  background-color: var(--clr-primary-400);
 }
 .item-picture img{
   transition: transform .3s ease;
@@ -446,9 +448,15 @@ body{
 .izbornik-item:hover .item-picture img{
   transform: scale(1.1);
 }
-  
+
 .item-desc{
   text-align: center;
+  background-color: rgb(247, 247, 247);
+  height: 120px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4px 3px;
 }
 
 .item-desc p{
@@ -457,14 +465,14 @@ body{
 
 /* bootstrap: img-resoponsive ili img-fluid */
 .item-picture img{
-  width: 50%; /*Ovdje smanjim velicinu a unutar .item-picture centriram pomocu flexa i tako drzim unutar ovog div-a(kontejnera)*/
+  width: 40%; /*Ovdje smanjim velicinu a unutar .item-picture centriram pomocu flexa i tako drzim unutar ovog div-a(kontejnera)*/
   object-fit: contain;
   max-height: 100%; /* ili postaviti jednaki height kao i max height od parenta */
 }
 
 .item-picture {
   width: 100%;
-  height: 200px;
+  height: 170px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -483,6 +491,10 @@ body{
 
   .glavni-izbornik{
     gap: 15px;
+  }
+
+  .item-picture{
+    height: 100px;
   }
 }
 
@@ -511,7 +523,6 @@ body{
 }
 
 .carousel__track-container{
-  background: lightcoral;
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -682,7 +693,7 @@ body{
 /* Utility klase */
 
 .container{
-  --max-width: 1400px;
+  --max-width: 1300px;
   --padding: 1rem;
 
   margin-inline: auto; /* da postavi left and right -> Logical Property */
