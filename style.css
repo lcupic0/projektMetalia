@@ -422,13 +422,6 @@ body{
   gap: 30px;
 }
 
-@media (min-width: 768px){
-  .glavni-izbornik{
-    
-  }
-
-}
-
 .izbornik-item {
   margin-top: 20px;
   box-sizing: border-box;
@@ -440,7 +433,7 @@ body{
 
 .izbornik-item:hover{
   box-shadow: 0 4px 20px 10px rgb(0 0 0 / 2%), 0 4px 20px 10px rgb(0 0 0 / 2%);
-  background-color: var(--clr-primary-400);
+  background-color: rgb(222, 222, 222);
 }
 .item-picture img{
   transition: transform .3s ease;
