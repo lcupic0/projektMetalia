@@ -445,7 +445,7 @@ body{
 .item-desc{
   text-align: center;
   background-color: rgb(247, 247, 247);
-  height: 120px;
+  height: 140px;
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -838,3 +838,98 @@ body{
 
  .scale-out-hor-right{animation:scale-out-hor-right .5s cubic-bezier(.55,.085,.68,.53) both}
  @keyframes scale-out-hor-right{0%{transform:scaleX(1);transform-origin:100% 100%;opacity:1}100%{transform:scaleX(0);transform-origin:100% 100%;opacity:1}}
+
+
+ /* STYLE ADMIN */
+
+.fa-user{
+  margin-right: 10px;
+}
+
+.admin-name{
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: var(--fs-400);
+}
+
+.naslov{
+  text-align: center;
+  text-decoration: underline;
+}
+
+.lista-ducana{
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  margin-top: 30px;
+}
+
+.list-ducana>div:active{
+  text-decoration: underline;
+}
+
+@media(max-width: 1000px){
+  .lista-ducana{
+    grid-auto-flow:unset;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+  }
+}
+
+.avatar{
+  width: 50px;
+  height: 50px;
+  border-radius: 100vh;
+  margin-right: 10px;
+}
+.opis>h2{
+  font-size: var(--fs-400);
+}
+.opis>p{
+  font-size: var(--fs-100);
+  color: var(--clr-grey-950);
+}
+
+.radnik{
+  box-sizing: content-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: calc(20%-40px);
+  background-color: var(--clr-grey-100);
+}
+
+.radnik:hover{
+  background-color: var(--clr-grey-400);
+}
+
+.lista-radnika{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+@media(max-width:768px){
+  .avatar{
+    width: 40px;
+    height: 40px;
+  }
+  .radnik{
+    width: 150px;
+    padding: 10px;
+  }
+  .opis>h2{
+    font-size: var(--fs-100);
+  }
+  .opis>p{
+    font-size: var(--fs-100);
+    color: var(--clr-grey-950);
+  }
+  
+  
+}
