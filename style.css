@@ -842,6 +842,10 @@ body{
 
  /* STYLE ADMIN */
 
+ .nav-icons{
+  margin-right: 6px;
+ }
+
 .fa-user{
   margin-right: 10px;
 }
@@ -865,8 +869,18 @@ body{
   margin-top: 30px;
 }
 
-.list-ducana>div:active{
+.ducan{
+  text-decoration: none;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ducan:hover, .ducan:focus{
   text-decoration: underline;
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent-500);
 }
 
 @media(max-width: 1000px){
@@ -893,14 +907,14 @@ body{
 }
 
 .radnik{
-  box-sizing: content-box;
+  box-sizing: border-box;
   padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  width: calc(20%-40px);
+  width: calc(20% - 40px);
   background-color: var(--clr-grey-100);
 }
 
@@ -911,17 +925,28 @@ body{
 .lista-radnika{
   display: flex;
   flex-wrap: wrap;
+  
   gap: 40px;
 }
 
-@media(max-width:768px){
-  .avatar{
-    width: 40px;
-    height: 40px;
-  }
+@media(max-width: 1100px){
   .radnik{
-    width: 150px;
-    padding: 10px;
+    width: calc(33.3333% - 40px);
+  }
+}
+
+@media(max-width:768px){
+  .radnik{
+    width: calc(50% - 20px);
+  }
+  .lista-radnika{
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .avatar{
+    width: 25px;
+    height: 25px;
   }
   .opis>h2{
     font-size: var(--fs-100);
@@ -930,6 +955,4 @@ body{
     font-size: var(--fs-100);
     color: var(--clr-grey-950);
   }
-  
-  
 }
