@@ -119,3 +119,34 @@ dotsNav.addEventListener("click", e => {
     hideShowArrows(slides,prevButton,nextButton,targetIndex);
 })
 // IMAGE CAROUSEL - KRAJ OVE APLIKACIJE
+
+// PRELOAD Images
+
+const images = new Array();
+
+function preloadImages(){
+    for(i=0; i<preloadImages.arguments.length; i++){
+        images[i] = new Image();
+        images[i].src=preloadImages.arguments[i];
+    }
+}
+preloadImages("./images/metalko.png",".images/ma-logo2.png");
+
+
+// SLIDER
+sliderDom += `<li class="carousel__slide current-slide">
+                <img class="carousel__image" src="images/poslovnice/vuk2.jpg" alt="">
+                <div class="overlay">
+                    <div class="overlay-text">
+                        <h3>Split poslovnica 1</h3>
+                        <p>Vukovarska 199, Split</p>
+                    </div>
+                </div>
+               </li>`;
+
+// Za svaki ducan napraviti objekt i unutar objekta da se nalaze "img" i "opis" koji se sastoji od "Naslova" i "Opisa" kao ime ducana + adresa.
+const ducan1 = {
+    slikaDucana: "images/poslovnice/vuk2.jpg",
+    imeDucana: "Split Poslovnica 1",
+    adresaDucana: "Vukovarska 199, Split"
+};
